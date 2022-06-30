@@ -4,17 +4,16 @@
  */
 package com.tienda.service;
 
-
 import java.util.List;
-import com.tienda.entity.Persona;
+import com.tienda.entity.Tienda;
 /**
  *
  * @author Hillary
  */
-public interface IPersonaService {
-    public List<Persona> getAllPersona();
-    public Persona getPersonaById (long id);
-    public void savePersona (Persona persona);
-    public void delete (long id);
-     
+public interface ITiendaService {
+    public List<Tienda> listStore();
+    
+    //test Aca creo los metodos para guardar la tienda nueva
+    public Tienda getTiendaById (long id);
+    public void saveTienda (Tienda tienda);
 }

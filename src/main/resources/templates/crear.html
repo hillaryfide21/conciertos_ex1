@@ -5,7 +5,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 -->
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>TODO supply a title</title>
+        <title>Inventario</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"> 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
@@ -16,13 +16,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <div class="card-body"> 
 
                 <div class="container">
-                    <!-- Pasamos el objeto de tipo persona -->
-                    <form th:object="${persona}"
+                    
+                    <form th:object="${producto}"
                           th:action="@{/save}"
                           method="POST"
                           >
                         
-                        <!-- Thyme fiel para que se agregue al objesto de persona -->
+                      
                         <input type = "hidden" th:field="*{id}">
                         <div class="form-group mb-3 row">
                             <label class="col-md-2 col-form-label" for="nombre">Nombre</label>
@@ -30,36 +30,33 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                 <input type="text" class="form-control form-control-sm col-md-6" th:field="*{nombre}" placeholder="Nombre">
                             </div>
 
-                            <label class="col-md-2 col-form-label" for="apellido1">Apellido1</label>
+                            <label class="col-md-2 col-form-label" for="cantidad">Cantidad</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{apellido1}" placeholder="Apellido">
+                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{cantidad}" placeholder="Cantidad">
                             </div>
 
-                            <label class="col-md-2 col-form-label" for="apellido2">Apellido2</label>
+                            <label class="col-md-2 col-form-label" for="unidad">Unidad</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{apellido2}" placeholder="Apellido2">
+                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{unidad}" placeholder="Unidad">
                             </div>
 
-                            <label class="col-md-2 col-form-label" for="telefono">Telefono</label>
+                            <label class="col-md-2 col-form-label" for="precio">Precio</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{telefono}" placeholder="Telefono">
+                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{precio}" placeholder="Precio">
                             </div>
-
-                            <label class="col-md-2 col-form-label" for="email">Email</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{email}" placeholder="Email">
-                            </div>
-
                             <div class="form-group" mb-3 row>
-                                <label class="form-control-sm col-form-label col-md-2" for="paises">Pais</label>
+                                <label class="form-control-sm col-form-label col-md-2" for="tiendas">Tienda</label>
                                 <div class="col-sm-10">
-                                    <select th:field="*{pais}" class="form-control form-control-sm col-md-6" id="pais" aria-describedby="emailHelp">
-                                        <option th:each="x:${paises}"
+                                    <div>
+                                    <select th:field="*{tienda}" class="form-control form-control-sm col-md-6" id="tienda" aria-describedby="emailHelp">
+                                        <option th:each="x:${tiendas}"
                                                 th:value="${x.id}"
-                                                th:text="${x.pais}"/>
+                                                th:text="${x.tienda}"/>
                                     </select>
+                                        </div>
                                 </div>
                             </div>
+                            
                             <button type="submit" class="btn btn-primary" value="Guardar">Submit</button>
                         </div>
                     </form>

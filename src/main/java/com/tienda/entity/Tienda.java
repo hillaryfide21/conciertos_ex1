@@ -10,20 +10,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 /**
  *
  * @author Hillary
  */
-@Entity
-@Table(name="paises")
 
-public class Pais implements Serializable {
-    @Id // Se define como PK
-    // Se le da las caracteristicas del id 
+@Entity
+@Table(name="tiendas")
+public class Tienda implements Serializable{
+    @Id 
     @GeneratedValue (strategy= GenerationType.IDENTITY) 
     private long id;
-    private String pais;
+    private String tienda;
     
     public long getId() {
         return id;
@@ -33,12 +31,11 @@ public class Pais implements Serializable {
         this.id = id;
     }
 
-    public String getPais() {
-        return pais;
+    public String getTienda() {
+        return tienda;
     }
     
-    public void setPais(String pais) {
-        this.pais = pais;
+    public void setTienda(String tienda) {
+        this.tienda = tienda;
     }
-    
 }

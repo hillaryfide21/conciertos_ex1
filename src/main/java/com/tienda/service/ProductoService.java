@@ -4,8 +4,8 @@
  */
 package com.tienda.service;
 
-import com.tienda.entity.Persona;
-import com.tienda.repository.PersonaRepository;
+import com.tienda.entity.Producto;
+import com.tienda.repository.ProductoRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,30 +15,31 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class PersonaService implements IPersonaService{
+public class ProductoService implements IProductoService{
     
     //Inyeccion dependencias para instanciar el persona repository y poder usar sus metodos 
     @Autowired
-    private PersonaRepository personaRepository;
+    private ProductoRepository productoRepository;
     
     @Override
-    public List<Persona> getAllPersona(){
-        return (List<Persona>)personaRepository.findAll();
+    public List<Producto> getAllProducto(){
+        return (List<Producto>)productoRepository.findAll();
     }
     
     @Override
-    public Persona getPersonaById (long id){
+    public Producto getProductoById (long id){
         //Si no encuentra la persona retorne nulo
-        return personaRepository.findById(id).orElse(null);
+        return productoRepository.findById(id).orElse(null);
     }
     
     @Override
-    public void savePersona (Persona persona){
-        personaRepository.save(persona);
+    public void saveProducto(Producto producto){
+        productoRepository.save(producto);
     }
     
     @Override
     public void delete (long id){
-        personaRepository.deleteById(id);
+        productoRepository.deleteById(id);
     }
 }
+

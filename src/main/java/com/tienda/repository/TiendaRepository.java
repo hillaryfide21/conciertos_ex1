@@ -4,13 +4,7 @@
  */
 package com.tienda.repository;
 
-/**
- *
- * @author Hillary
- */
-
-
-import com.tienda.entity.Pais;
+import com.tienda.entity.Tienda;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 /**
@@ -19,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface PaisRepository extends CrudRepository<Pais,Long>{
+public interface TiendaRepository extends CrudRepository<Tienda,Long>{
     
 }

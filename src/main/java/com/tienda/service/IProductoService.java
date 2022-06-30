@@ -5,11 +5,14 @@
 package com.tienda.service;
 
 import java.util.List;
-import com.tienda.entity.Pais;
+import com.tienda.entity.Producto;
 /**
  *
  * @author Hillary
  */
-public interface IPaisService {
-    public List<Pais> listCountry();
+public interface IProductoService {
+    public List<Producto> getAllProducto();
+    public Producto getProductoById (long id);
+    public void saveProducto (Producto producto);
+    public void delete (long id);
 }
